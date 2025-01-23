@@ -16,7 +16,7 @@ const maxOfTwoNumbers = (x, y) => {
     }
   }
   
-  console.log('Exercise 1 Result:', maxOfTwoNumbers(3, 9));
+  console.log('Exercise 1 Result:', maxOfTwoNumbers(35, 9));
  
   /*
 Exercise 2: isAdult()
@@ -37,7 +37,7 @@ const isAdult = (age) => {
 }
 
 
-console.log('Exercise 2 Result:', isAdult(21));
+console.log('Exercise 2 Result:', isAdult(17));
 
 
 /*
@@ -128,12 +128,16 @@ Example: calculateTip(50, 20) should return 10.
 
 Complete the exercise in the space below:
 */
+
 function calculateTip(bill, gratuity){
     return (bill*gratuity/100)
 }
+function netTotal(bill, gratuity){
+    return ((bill*gratuity/100)+ bill)}
 
 
 console.log('Exercise 7 Result:', calculateTip(50, 20));
+console.log(`The total bill would be $ ${netTotal(50, 20)}.`)
 /*
 Exercise 8: convertTemperature()
 
@@ -155,15 +159,15 @@ then take temp*(5/9)+32 and "Celsius"
 */
 function convertTemperature(temp, scale){
     if(scale === 'C'){
-        return((temp*9/5+32) + " Fahrenheit")
+        return((temp+32)*(9/5) + " Fahrenheit")
     } else if (scale === 'F') {
-        return((temp*5/9+32)  + "Celsius") 
+        return((temp-32)*(5/9)  + " Celsius") 
     }else{
         return ("ERROR")
     }
 }
-
-console.log('Exercise 8 Result:', convertTemperature(32, "C"));
+//edit 1/23/25 fixed the formula for conversion
+console.log('Exercise 8 Result:', convertTemperature(212, "F"));
 
 
 /*
@@ -316,7 +320,54 @@ function rockingThePaper(left, right){
         return("Left Wins")
     }else if(left == 'Paper'  && right == 'Scissors'){
         return("Right Wins")
+    }else{
+        return("Y'all are messing up the game.")
     }
 }
 
-console.log("Ro Sham Bo results " + rockingThePaper('Rock', 'Paper'))
+console.log("Ro Sham Bo results " + rockingThePaper('Scissors', 'Paper'))
+
+// Fizz Buzz 
+
+// if the number is divisible by 3 then write fizz
+// if the number is divisble by 5 then write buzz
+// if the number is dvisible by 3 & 5 write fizzbuzz
+
+
+
+// //! 1. create a function called theFizzie
+// //! 2. theFizzie can take in a number (parameter). The Parameter is called theCount
+// //! 3. make a loop that starts at zero and is named "i" and it will end at theCount
+// //! 4. inside loop If i is divisible by 5 and 3 then return "fizzbuzz"
+// //! 5. else if i is divisble by 3 then write "fizz"
+// //! 6. else if i is divisble by 5 then write "buzz"
+// //! 7. else print the number
+// //! 8. when loop is finished console.log("DONE!!!!")
+
+// function theFizzie(theCount){
+//     console.log(theCount)
+//     //making loop for fizzbuzz check
+//     for (let i=0; i<=theCount; i++ ){
+//         // console.log(i)
+
+//         //If i is divisible by 5 and 3 and there's no remainder then return "fizzbuzz"
+//         if ( i % 5 == 0  && i % 3 == 0){
+//              console.log('fizzbuzz')
+//         }
+//         else if (i % 3 == 0){
+//             // else if i is divisble  and there's no remainder by 3 then write "fizz"
+//             console.log('fizz')
+//         } 
+//         else if (i%5 == 0 ){
+//             // else if i is divisble by 5 and there's no remainder then write "buzz"
+//             console.log('buzz')
+//         }
+//         else {
+//              console.log(i)
+//         }
+//     }
+//     console.log('DONE')
+
+// }
+
+// theFizzie(22)
